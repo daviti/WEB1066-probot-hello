@@ -3,7 +3,7 @@ services:
   - docker
 
 env:
-  - NODE_VERSION=13.10.1-jessie
+  - NODE_VERSION=13.10.1
   #- NODE_VERSION=6-jessie
 
 script:
@@ -20,26 +20,26 @@ stages:
 jobs:
   include:
     - stage: npm-targets
-      name: "Test 13.10.1-jessie test"
+      name: "Test 13.10.1 test"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
       env:
-      - NODE_VERSION=13.10.1-jessie
+      - NODE_VERSION=13.10.1
       - NPM_TARGET=test
     - stage: npm-targets
-      name: "Test 13.10.1-jessie lint"
+      name: "Test 13.10.1 lint"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
       env:
-      - NODE_VERSION=13.10.1-jessie
+      - NODE_VERSION=13.10.1
       - NPM_TARGET=lint
     - stage: npm-targets
-      name: "Test 13-jessie coverage"
+      name: "Test 13.10.1 coverage"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
       env:
-      - NODE_VERSION=13.10.1-jessie
+      - NODE_VERSION=13.10.1
       - NPM_TARGET=coverage
