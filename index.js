@@ -104,7 +104,7 @@ if (process.env.PROM_URL) {
 
    prom.observe(observation, duration)
    app.log('check_run.created -> done')
- }),
+ })
 
   // For more information on building apps:
   // https://probot.github.io/docs/
