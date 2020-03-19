@@ -25,6 +25,8 @@
     "form-data": "^3.0.0",
     "heroku": "^7.39.0",
     "probot": "^7.0.0",
+    "prom-client": "^11.2.0",
+    "express": "^4.13.3",
     "run": "^1.4.0"
   },
   "devDependencies": {
@@ -42,5 +44,9 @@
     "env": [
       "jest"
     ]
+  },
+
+  "jest": {
+    "testEnvironment": "node"
   }
 }
